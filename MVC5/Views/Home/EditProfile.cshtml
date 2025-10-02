@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "EditProfile";
+}
+
+<h2>EditProfile</h2>
+
+@model MVC5.Models.UserProfileViewModel
+
+<h2>編輯個人資料</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-success">儲存</button>
+}

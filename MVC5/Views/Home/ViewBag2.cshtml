@@ -1,0 +1,9 @@
+﻿<!-- 在Razor视图中使用ViewBag -->
+<h1>@ViewBag.PageTitle</h1>
+<p>当前用户数: @ViewBag.UserCount</p>
+<p>当前时间: @ViewBag.CurrentDate.ToString("yyyy-MM-dd")</p>
+
+@if (ViewBag.IsAdmin)
+{
+    <button>管理员功能</button>
+}

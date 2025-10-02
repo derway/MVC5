@@ -1,0 +1,19 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>TempData: @ViewBag.Message</h2>
+        <h2>TempData.Keep: @TempData["Keepmsg"]</h2>
+        <h2>TempData.Peek: @TempData.Peek("Peekmsg")</h2>
+    </div>
+</body>
+</html>

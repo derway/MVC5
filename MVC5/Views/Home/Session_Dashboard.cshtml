@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "使用者儀表板";
+}
+
+@if (ViewBag.UserRole == "Admin")
+{
+    <p>您是管理員，可以進行後台操作。</p>
+}
+
+
+@*使用Session 直接取值*@
+<h2>歡迎回來，@Session["UserName"]！</h2>
+<p>您的角色是：<strong>@Session["UserRole"]</strong></p>
+
+
+<h2>歡迎回來，@ViewBag.UserName！</h2>
+
+<p>您的角色是：<strong>@ViewBag.UserRole</strong></p>
+
+<hr />
+
+<p>這是您的儀表板內容，可以根據角色顯示不同功能。</p>
+
+@if (ViewBag.UserRole == "Admin")
+{
+    <p>🔧 管理員功能：<a href="@Url.Action("ManageUsers", "Admin")">使用者管理</a></p>
+}
+else if (ViewBag.UserRole == "User")
+{
+    <p>📄 一般使用者功能：<a href="@Url.Action("ViewProfile", "User")">檢視個人資料</a></p>
+}
+
+<p><a href="@Url.Action("Session_Logout", "Home")">登出</a></p>

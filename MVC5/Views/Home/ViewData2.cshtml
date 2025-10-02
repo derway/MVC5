@@ -1,0 +1,18 @@
+﻿<!-- 在Razor视图中使用ViewData -->
+@{
+    var title = ViewData["PageTitle"] as string;
+    var users = ViewData["UserList"] as List<string>;
+    var count = Convert.ToInt32(ViewData["ProductCount"]);
+}
+
+<h1>@title</h1>
+<p>产品数量: @count</p>
+<ul>
+    @if (users != null)
+    {
+        foreach (var user in users)
+        {
+            <li>@user</li>
+        }
+    }
+</ul>
